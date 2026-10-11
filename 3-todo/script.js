@@ -28,7 +28,7 @@ function addTask() {
 
 function toggleTask(id) {
   const task = tasks.find((t) => t.id === id);
-  task.done = true;
+  task.done = !task.done;
   render();
 }
 
@@ -58,13 +58,18 @@ function render() {
     const task = visible[i];
     const li = document.createElement("li");
     li.className = "task";
+
     if (task.done) {
       li.classList.add("completed");
+    }
+    else {
+      li.classList.remove("completed");
     }
 
     const span = document.createElement("span");
     span.className = "task__text";
     span.textContent = task.text;
+    span.style.textDecoration = li.classList.contains("completed") ? 'line-through' : 'none';
     span.addEventListener("click", () => toggleTask(task.id));
 
     const del = document.createElement("button");
