@@ -42,6 +42,7 @@ body {
 }
 
 .card {
+  justify-self: center;
   width: 300px;
   background: #ffffff;
   border-radius: 12px;
