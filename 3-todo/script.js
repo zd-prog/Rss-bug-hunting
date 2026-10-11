@@ -12,9 +12,17 @@ let nextId = 1;
 
 function addTask() {
   const text = input.value;
-  errorEl.hidden = true;
-  tasks.push({ id: nextId++, text: text, done: false });
+
+  if (text.trim() !== "") {
+    errorEl.hidden = true;
+    tasks.push({ id: nextId++, text: text, done: false });
+  }
+  else {
+    errorEl.hidden = false;
+  }
+
   input.value = "";
+
   render();
 }
 
