@@ -75,14 +75,17 @@ body {
 }
 
 .features {
-  list-style: none;
+  list-style-type: "✓ ";
   margin-bottom: 24px;
   text-align: left;
 }
 
 .features li {
-  padding: 0;
-  margin-bottom: 8px;
+  padding: 6px 0;
+}
+
+.features li::marker {
+  color: #28a745;
 }
 
 .features li::before {
