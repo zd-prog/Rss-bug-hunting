@@ -107,8 +107,8 @@ function renderCart() {
   }
 
   badgeEl.textContent = cartProductsCount;
-  totalEl.textContent = total;
-  emptyMsg.hidden = true;
+  totalEl.textContent = cartProductsCount ? total : '0';
+  emptyMsg.hidden = cartProductsCount !== 0;
 }
 
 promoBtn.addEventListener("click", applyPromo);
